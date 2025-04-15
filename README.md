@@ -1,4 +1,4 @@
-# 🐟 Fisher — Retro Tibia Fishing Bot
+# Fisher — Retro Tibia Fishing Bot
 
 A **minimalist fishing bot** designed for retro versions of Tibia. Built with simplicity in mind, using the **least amount of resources and external libraries possible**, while offering basic automation for the classic fishing mechanic.
 
