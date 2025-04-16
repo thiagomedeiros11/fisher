@@ -85,19 +85,19 @@ def keep_fishing():
     print("Bot resumed.")
 
 def leave():
-    janela.destroy()
+    window.destroy()
 
-janela = tk.Tk()
-janela.title("Fisher")
-janela.geometry("300x300")
+window = tk.Tk()
+window.title("Fisher")
+window.geometry("300x300")
 
-tk.Label(janela, text="1. Click to 'Map' and use:\n → Right = fishing rod\n → Left = water\n → ESC = leave").pack(pady=10)
+tk.Label(window, text="1. Click to 'Map' and use:\n → Right = fishing rod\n → Left = water\n → ESC = leave").pack(pady=10)
 
-tk.Button(janela, text="Map Fishing Rod + Water", command=map_fishingrod_water).pack(pady=5)
-tk.Button(janela, text="Fishing ON", command=start_fishing).pack(pady=5)
-tk.Button(janela, text="Pause", command=stop_fishing).pack(pady=5)
-tk.Button(janela, text="Resume", command=keep_fishing).pack(pady=5)
-tk.Button(janela, text="Leave", command=leave, fg="white", bg="red").pack(pady=10)
+tk.Button(window, text="Map Fishing Rod + Water", command=map_fishingrod_water).pack(pady=5)
+tk.Button(window, text="Fishing ON", command=start_fishing).pack(pady=5)
+tk.Button(window, text="Pause", command=stop_fishing).pack(pady=5)
+tk.Button(window, text="Resume", command=keep_fishing).pack(pady=5)
+tk.Button(window, text="Leave", command=leave, fg="white", bg="red").pack(pady=10)
 
-janela.mainloop()
+window.mainloop()
 
