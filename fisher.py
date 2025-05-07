@@ -12,21 +12,23 @@ pause = False
 water_index = 0
 
 def map_fishingrod_water():
-
     def on_click(x, y, button, pressed):
         global fishingrod_pos, water_pos 
         if not pressed:
             return
         if button == mouse.Button.right:
-            fishingrod_pos= (x, y)
+            fishingrod_pos = (x, y)
             print(f"[Mapping] Fishing Rod: {fishingrod_pos}")
         elif button == mouse.Button.left:
             water_pos.append((x, y))
             print(f"[Mapping] Water: {x}, {y}")
 
     def on_press(key):
+        global pause, fishing
         if key == keyboard.Key.esc:
-            print("Leaving mapping mode.")
+            pause = True
+            fishing = False
+            print("Leaving mapping mode. Bot paused.")
             listener_mouse.stop()
             listener_keyboard.stop()
 
@@ -91,7 +93,7 @@ window = tk.Tk()
 window.title("Fisher")
 window.geometry("300x300")
 
-tk.Label(window, text="1. Click to 'Map' and use:\n → Right = fishing rod\n → Left = water\n → ESC = leave").pack(pady=10)
+tk.Label(window, text="1. Click to 'Map' and use:\n → Right = fishing rod\n → Left = water\n → ESC = leave + pause").pack(pady=10)
 
 tk.Button(window, text="Map Fishing Rod + Water", command=map_fishingrod_water).pack(pady=5)
 tk.Button(window, text="Fishing ON", command=start_fishing).pack(pady=5)
